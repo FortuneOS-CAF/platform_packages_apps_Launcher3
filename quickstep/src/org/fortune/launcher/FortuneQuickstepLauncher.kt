@@ -7,11 +7,16 @@
 package org.fortune.launcher
 
 import com.android.launcher3.uioverrides.QuickstepLauncher
+import com.android.systemui.plugins.shared.LauncherOverlayManager
 
 class FortuneQuickstepLauncher : QuickstepLauncher() {
 
     companion object {
         private const val TAG = "FortuneQuickstepLauncher"
+    }
+
+    override fun getDefaultOverlay(): LauncherOverlayManager {
+        return OverlayCallbackImpl(this)
     }
 
 }
