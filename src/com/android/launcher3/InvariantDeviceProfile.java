@@ -26,6 +26,7 @@ import static com.android.launcher3.util.DisplayController.CHANGE_SUPPORTED_BOUN
 import static com.android.launcher3.util.DisplayController.CHANGE_TASKBAR_PINNING;
 import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 
+import static org.fortune.launcher.OverlayCallbackImpl.KEY_ALLAPPS_THEMED_ICONS;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_FONT_SIZE;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_ICON_SIZE;
 
