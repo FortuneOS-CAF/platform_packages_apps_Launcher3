@@ -33,6 +33,9 @@
     <string name="desktop_show_labels">Show icon labels on desktop</string>
     <string name="drawer_show_labels">Show icon labels in drawer</string>
 
+    <!-- Settings Categories -->
+    <string name="category_recents">Recents</string>
+
     <!-- Hotseat searchbar -->
     <string name="label_search">Search</string>
     <string name="label_lens">Google Lens</string>
@@ -40,7 +43,9 @@
     <string name="dock_search_title">Google search bar</string>
     <string name="dock_search_summary">Search bar in the bottom dock</string>
 
-    <!-- Recents -->
-    <string name="action_lens">Lens</string>
+    <!-- Recents icons -->
+    <string name="recents_screenshot_title">Screenshot</string>
+    <string name="recents_clear_all_title">Clear all</string>
+    <string name="recents_lens_title">Lens</string>
 
 </resources>
