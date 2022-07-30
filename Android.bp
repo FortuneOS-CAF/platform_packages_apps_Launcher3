@@ -178,6 +178,7 @@ android_library {
         "SettingsLib",
         "libGoogleFeed",
         "fortune-preference",
+        "bcsmartspace-google"
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
