@@ -77,4 +77,7 @@
     <string name="pref_themed_icons_summary">Follow themed icons used on home screen</string>
     <string name="themed_icons_disabled_summary">Themed icons are turned off in Wallpaper &amp; style</string>
 
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">At a Glance</string>
+    <string name="smartspace_pref_summary">Show smartspace at the top of home screen</string>
 </resources>

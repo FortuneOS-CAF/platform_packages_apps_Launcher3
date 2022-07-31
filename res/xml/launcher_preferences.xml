@@ -63,6 +63,13 @@
             android:summary="@string/hotseat_dock_search_summary"
             android:defaultValue="true" />
 
+        <SwitchPreferenceCompat
+            android:key="pref_smartspace"
+            android:title="@string/smartspace_pref_title"
+            android:summary="@string/smartspace_pref_summary"
+            android:defaultValue="true"
+            launcher:iconSpaceReserved="false" />
+
         <Preference
             android:key="pref_suggestions"
             android:title="@string/suggestion_screen_title"
