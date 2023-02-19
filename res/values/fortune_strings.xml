@@ -9,11 +9,11 @@
     <string name="title_show_google_app">Show Google App</string>
 
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_left">When you swipe left from main Home screen</string>
+    <string name="msg_minus_one_on_left">From home screen, swipe left to open Google feed</string>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <string name="msg_minus_one_on_right">When you swipe right from main Home screen</string>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+    <string name="msg_minus_one_on_right">From home screen, swipe right to open Google feed</string>
 
     <!-- Gestures -->
     <string name="pref_dt_gesture_title">Double tap to sleep</string>
