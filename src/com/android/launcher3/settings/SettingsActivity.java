@@ -72,8 +72,7 @@ import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
  * Settings activity for Launcher. Currently implements the following setting: Allow rotation
  */
 public class SettingsActivity extends CollapsingToolbarBaseActivity
-        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
-        OnSharedPreferenceChangeListener {
+        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
 
     @VisibleForTesting
     static final String DEVELOPER_OPTIONS_KEY = "pref_developer_options";
@@ -121,25 +120,6 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
             // Display the fragment as the main content.
             fm.beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, f).commit();
         }
-            LauncherPrefs.getPrefs(getApplicationContext())
-                    .registerOnSharedPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        switch (key) {
-            case KEY_DOCK_SEARCH:
-                LauncherAppState.getInstance(this).setNeedsRestart();
-                break;
-            case KEY_DESKTOP_LABELS:
-            case KEY_DRAWER_LABELS:
-            case KEY_FONT_SIZE:
-            case KEY_ICON_SIZE:
-                InvariantDeviceProfile.INSTANCE.get(this).onConfigChanged(getApplicationContext());
-                break;
-            default:
-                break;
-        }
     }
 
     private boolean startPreference(String fragment, Bundle args, String key) {
@@ -186,7 +166,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
      * This fragment shows the launcher preferences.
      */
     public static class LauncherSettingsFragment extends PreferenceFragmentCompat implements
-            SettingsCache.OnChangeListener {
+            SettingsCache.OnChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
 
         protected boolean mDeveloperOptionsEnabled = false;
 
@@ -256,6 +236,36 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
         public void onSaveInstanceState(Bundle outState) {
             super.onSaveInstanceState(outState);
             outState.putBoolean(SAVE_HIGHLIGHTED_KEY, mPreferenceHighlighted);
+        }
+
+        @Override
+        public void onStart() {
+            super.onStart();
+            LauncherPrefs.getPrefs(getContext()).registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+            LauncherPrefs.getPrefs(getContext()).unregisterOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            switch (key) {
+                case KEY_DOCK_SEARCH:
+                    LauncherAppState.getInstance(getContext()).setNeedsRestart();
+                    break;
+                case KEY_DESKTOP_LABELS:
+                case KEY_DRAWER_LABELS:
+                case KEY_FONT_SIZE:
+                case KEY_ICON_SIZE:
+                    InvariantDeviceProfile.INSTANCE.get(getContext())
+                            .onConfigChanged(getActivity().getApplicationContext());
+                    break;
+                default:
+                    break;
+            }
         }
 
         /**
