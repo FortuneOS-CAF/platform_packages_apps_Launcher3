@@ -27,6 +27,7 @@ import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERE
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_DESKTOP_LABELS;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_DOCK_SEARCH;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_DRAWER_LABELS;
+import static org.fortune.launcher.OverlayCallbackImpl.KEY_DRAWER_OPEN_KEYBOARD;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_FONT_SIZE;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_ICON_SIZE;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_MINUS_ONE;
@@ -260,6 +261,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 case KEY_DRAWER_LABELS:
                 case KEY_FONT_SIZE:
                 case KEY_ICON_SIZE:
+                case KEY_DRAWER_OPEN_KEYBOARD:
                     InvariantDeviceProfile.INSTANCE.get(getContext())
                             .onConfigChanged(getActivity().getApplicationContext());
                     break;
