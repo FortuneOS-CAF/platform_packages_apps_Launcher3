@@ -27,7 +27,6 @@ import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_POSITIO
 import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_TYPE_MAIN;
 
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_DOCK_SEARCH;
-import static org.fortune.launcher.OverlayCallbackImpl.KEY_DT_GESTURE;
 import static org.fortune.launcher.OverlayCallbackImpl.KEY_WORKSPACE_LOCK;
 
 import android.annotation.SuppressLint;
@@ -890,11 +889,6 @@ public final class Utilities {
     public static boolean isQSBEnabled(Context context) {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DOCK_SEARCH, true);
-    }
-
-    public static boolean isDoubleTapGestureEnabled(Context context) {
-        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(KEY_DT_GESTURE, true);
     }
 
     public static boolean isWorkspaceEditAllowed(Context context) {

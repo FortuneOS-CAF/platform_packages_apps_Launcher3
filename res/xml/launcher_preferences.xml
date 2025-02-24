@@ -41,13 +41,6 @@
         android:persistent="true" />
 
     <SwitchPreference
-        android:key="pref_dt_gesture"
-        android:title="@string/dt_gesture_title"
-        android:summary="@string/dt_gesture_summary"
-        android:defaultValue="true"
-        android:persistent="true" />
-
-    <SwitchPreference
         android:key="pref_hide_top_shadow"
         android:title="@string/hide_top_shadow_title"
         android:summary="@string/hide_top_shadow_summary"
